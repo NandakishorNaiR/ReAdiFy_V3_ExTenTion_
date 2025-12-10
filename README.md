@@ -1,188 +1,162 @@
 # ReAdiFy_V3_ExTenTion_
-downloadlink:- https://github.com/NandakishorNaiR/ReAdiFy_V3_ExTenTion_/archive/refs/tags/v3.0.zip
-Readify – Chrome Text-to-Speech Extension
+
+**Download Link:**  
+https://github.com/NandakishorNaiR/ReAdiFy_V3_ExTenTion_/archive/refs/tags/v3.0.zip
+
+---
+
+# Readify – Chrome Text-to-Speech Extension
 
 Readify is a lightweight Chrome extension that converts on-screen text into speech using built-in browser voices. It offers multiple voice options, adjustable reading speed, and full playback controls, making reading easier, faster, and more accessible.
 
-🛠️ Technologies Used
+---
 
-JavaScript (Core logic)
+## 🛠️ Technologies Used
+- JavaScript (Core logic)
+- Chrome Extension APIs  
+  - `chrome.tts` (Text-to-Speech)  
+  - `chrome.runtime` & `chrome.tabs`
+- HTML/CSS (Popup UI)
+- Background Service Worker
+- Content Script (Text extraction)
+- Manifest V3
 
-Chrome Extension APIs
+---
 
-chrome.tts (Text-to-Speech)
+## 🎙️ Features
 
-chrome.runtime & chrome.tabs
-
-HTML/CSS (Popup UI)
-
-Background Service Worker
-
-Content Script (To extract webpage text)
-
-Manifest V3
-
-🎙️ Features
-1. Text-to-Speech Reader
-
+### 1. Text-to-Speech Reader  
 Reads selected or auto-detected text on a webpage with clear, natural speech.
 
-2. Multiple Voice Options
+### 2. Multiple Voice Options  
+Choose from available browser voices (Google voices, Microsoft voices, etc.).
 
-Users can choose from available browser voices (e.g., Microsoft David, Google US English, etc.).
+### 3. Adjustable Speed  
+Custom slider allows slow, normal, or fast reading.
 
-3. Adjustable Speed
+### 4. Full Playback Controls  
+Start • Pause • Resume • Stop
 
-A custom slider allows slow, normal, or fast reading.
-
-4. Full Playback Controls
-
-Start
-
-Pause
-
-Resume
-
-Stop
-
-5. Clean & Simple Popup UI
-
+### 5. Clean & Simple Popup UI  
 Buttons, dropdowns, and sliders for easy interaction.
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
+
+```text
 READIFY_CHROME_STABLE_V3/
- background.js
-│   content.js
-│   manifest.json
-│   popup.css
-│   popup.html
-│   popup.js
 │
-└───icons
-        icon128.png
-        icon16.png
-        icon48.png
+├── background.js
+├── content.js
+├── manifest.json
+├── popup.css
+├── popup.html
+├── popup.js
+│
+└── icons/
+    ├── icon16.png
+    ├── icon48.png
+    └── icon128.png
+```
 
+---
 
-⚙️ How It Works (Functionality Overview)
-1. Content Script (content.js)
+## ⚙️ How It Works (Functionality Overview)
 
-Extracts selected text or visible text from the DOM.
+### 1. Content Script (`content.js`)
+- Extracts selected or visible webpage text  
+- Sends it to the background worker  
 
-Sends text to the background service worker.
+### 2. Background Script (`background.js`)
+- Uses `chrome.tts` to read text aloud  
+- Handles play, pause, resume, stop, speed, and voice selection  
 
-2. Background Script (background.js)
+### 3. Popup UI (`popup.js`, `popup.html`, `popup.css`)
+- Provides UI to:  
+  - Choose voice  
+  - Adjust speed  
+  - Start/Pause/Resume/Stop reading  
 
-Uses chrome.tts to read the text aloud.
+### 4. Manifest V3 (`manifest.json`)
+- Declares permissions, icons, scripts, and metadata  
 
-Handles play, pause, resume, stop, and voice selection.
+---
 
-3. Popup UI (popup.js, popup.html, popup.css)
+## 📦 Setup & Installation (Developer Mode)
 
-Lets the user:
+### 1. Download the ZIP  
+Extract the downloaded folder.
 
-Select voice
-
-Adjust speed
-
-Start/Pause/Resume/Stop reading
-
-Sends commands to the background script.
-
-4. Manifest.json (MV3)
-
-Configures permissions, scripts, icons, and extension metadata.
-
-📦 Setup & Installation (Developer Mode)
-1. Download the ZIP
-
-Download the Readify extension ZIP and extract it.
-
-2. Open Chrome Extensions
-
-Go to:
-
+### 2. Open Chrome Extensions  
+```
 chrome://extensions/
+```
 
-3. Enable Developer Mode
+### 3. Enable Developer Mode  
+Toggle on **Developer mode** (top right)
 
-Top-right toggle → Developer mode ON
-
-4. Load Unpacked
-
-Click Load unpacked
-Select the folder:
-
+### 4. Load Unpacked  
+Click **Load unpacked** → Select:  
+```
 READIFY_CHROME_STABLE_V3/
+```
 
+Your extension is now installed! 🎉
 
-Your extension is now installed.
+---
 
-🚀 Usage Guide
-1. Pin the Extension
+## 🚀 Usage Guide
 
-Click the puzzle icon → pin Readify to the toolbar.
+### 1. Pin the Extension  
+Extensions icon → Pin **Readify**
 
-2. Open Popup
+### 2. Open Popup  
+Select a voice, adjust speed, use the buttons.
 
-Click the Readify icon to see:
+### 3. Select Text  
+Highlight text and click **Start**.
 
-Voice selector
+### 4. Full Page Mode  
+If no text is selected, Readify reads visible content.
 
-Speed slider
+---
 
-Start/Pause/Resume/Stop buttons
+## 🛠️ Customization
 
-3. Select Text
+### UI Styling  
+Edit `popup.css`
 
-Highlight any text on a webpage → click Start.
+### HTML Layout  
+Modify `popup.html`
 
-4. Full-page Mode
+### TTS Logic  
+Change `background.js`
 
-If no text is highlighted, Readify attempts to read visible page content.
+### Text Extraction  
+Edit `content.js`
 
-🛠️ Customization
-UI Styling
+---
 
-Modify popup.css.
+## ❗ Troubleshooting
 
-Popup Layout
+**Not speaking?**
+- Try changing the voice  
+- Ensure TTS engines are available  
 
-Edit popup.html.
+**No text detected?**
+- Some websites block scripts → select manually  
 
-TTS Logic / Voice APIs
+**Buttons not working?**
+- Check console logs  
+- Validate `manifest.json`
 
-Modify background.js.
+---
 
-Text Extraction Logic
+## 📄 License  
+MIT License  
 
-Edit content.js.
+---
 
-❗ Troubleshooting
-Extension not speaking?
-
-Check if your browser has TTS voices installed.
-
-Try selecting another voice from the dropdown.
-
-No text detected?
-
-Some websites block script access—select text manually.
-
-Buttons not responding?
-
-Make sure:
-
-manifest.json is valid
-
-Scripts are linked properly
-
-Console shows no errors (Inspect popup)
-
-📄 License
-
-MIT License 
-
-👨‍💻 Author
-
-Built with ❤️ under the Knoxy Nexus ecosystem.
+## 👨‍💻 Author  
+Built with ❤️ under the **Knoxy Nexus** ecosystem.
