@@ -65,6 +65,7 @@ READIFY_CHROME_STABLE_V3/
 ├── popup.css
 └── popup.js
 
+
 ⚙️ How It Works (Functionality Overview)
 1. Content Script (content.js)
 
