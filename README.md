@@ -51,19 +51,17 @@ Buttons, dropdowns, and sliders for easy interaction.
 
 📂 Project Structure
 READIFY_CHROME_STABLE_V3/
+ background.js
+│   content.js
+│   manifest.json
+│   popup.css
+│   popup.html
+│   popup.js
 │
-├── icons/
-│   ├── icon16.png
-│   ├── icon48.png
-│   └── icon128.png
-│
-├── background.js
-├── content.js
-├── manifest.json
-│
-├── popup.html
-├── popup.css
-└── popup.js
+└───icons
+        icon128.png
+        icon16.png
+        icon48.png
 
 
 ⚙️ How It Works (Functionality Overview)
@@ -183,7 +181,7 @@ Console shows no errors (Inspect popup)
 
 📄 License
 
-MIT License (recommended for open distribution).
+MIT License 
 
 👨‍💻 Author
 
