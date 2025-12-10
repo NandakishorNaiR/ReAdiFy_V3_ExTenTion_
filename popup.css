@@ -1,0 +1,10 @@
+:root{--bg:#0b0f12;--card:#0f1720;--accent:#1f6feb;--text:#e6eef8}
+@media (prefers-color-scheme: light){:root{--bg:#f6f8fb;--card:#ffffff;--accent:#1f6feb;--text:#0b1220}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Segoe UI,Roboto,Arial,sans-serif}
+.container{width:260px;padding:12px;box-sizing:border-box}
+h2{margin:6px 0 10px;font-size:18px}
+label{display:block;font-size:12px;margin-top:8px;margin-bottom:4px}
+select,input[type=range]{width:100%;padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:var(--card);color:var(--text)}
+.buttons{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+button{flex:1;padding:8px;border-radius:6px;border:none;background:var(--accent);color:white;cursor:pointer}
+.footer{margin-top:10px;font-size:11px;color:rgba(255,255,255,0.6);text-align:center}
